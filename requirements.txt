@@ -62,7 +62,6 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 Pygments==2.6.1
 pyparsing==2.4.7
-pyrsistent==0.16.0
 pywin32==225
 pywinpty==0.5.7
 PyYAML==5.3.1

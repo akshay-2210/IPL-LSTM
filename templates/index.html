@@ -19,7 +19,7 @@
     			<p style="text-align: center">A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
             </div>
             
-            <h3 style="position: absolute; left:400px; top:180px">Batting Team</h3>
+            <h3 style="display: inline; position: absolute; left:400px; top:180px">Batting Team</h3>
             <select name="Batting team" id="bat" required="required">
                 <option value="none">Select a Batting team</option>
                 <option value = "Chennai Super Kings">Chennai Super Kings</option>
@@ -46,7 +46,7 @@
             </div>
            
              
-            <h3 style="position: absolute; right:400px; top:180px">Bowling Team</h3>
+            <h3 style="display: inline; position: absolute; right:400px; top:180px">Bowling Team</h3>
             <select name="Bowling team" id="bowl" required="required">
                 <option value="none">Select a Bowling team</option>
                 <option value = "Chennai Super Kings">Chennai Super Kings</option>
@@ -59,7 +59,7 @@
                 <option value = "Sunrisers Hyderabad">Sunrisers Hyderabad</option>
             </select>
 
-            <h3 style="position: absolute; left:400px; top:250px">Overs</h3>
+            <h3 style="display: inline; position: absolute; left:400px; top:250px">Overs</h3>
             <select name="Overs" id="overs" required="required">
                 <option value = "none">Select Overs</option>
                 <option value = "1">1</option>
@@ -84,7 +84,7 @@
                 <option value = "20">20</option>
             </select>
 
-            <h3 style="position: absolute; right:475px; top:250px">Balls</h3>
+            <h3 style="display: inline; position: absolute; right:475px; top:250px">Balls</h3>
             <select name="Balls" id="balls" required="required">
                 <option value = "none">Select balls</option>
                 <option value = "1">1</option>
@@ -95,7 +95,7 @@
                 <option value = "6">6</option>
             </select>
 
-            <h3 style="position: absolute; left:400px; top:320px">Batting team score</h3>
+            <h3 style="display: inline; position: absolute; left:400px; top:320px">Batting team score</h3>
             <input name="Runs Scored" id="scored" type="number " placeholder="eg.50">
             <h3 style="position: absolute; right:395px; top:320px">Required Runs</h3>
             <input name="Required Runs" id="required" required="required" placeholder="eg.147">   
@@ -105,7 +105,7 @@
             <br><br><button id="predict" type="submit" style="position: absolute; right:700px; top:480px">Predict</button>
         </form>
 
-        <br><br><h3 style="position: absolute; right:495px; top:560px">{{ prediction_text }}</h3>
+        <br><br><h3 style="display: inline; position: absolute; right:495px; top:560px">{{ prediction_text }}</h3>
     </div>
 
     <style>

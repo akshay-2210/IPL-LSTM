@@ -1,8 +1,6 @@
 from flask import Flask, render_template, request, url_for
-import pickle
 import numpy as np
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing import image
 import tensorflow as tf
 
 
@@ -34,7 +32,7 @@ def predict():
          
        
         probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
-        predictions = probability_model.predict([[[overs,balls,scored,wicket,required]]])
+        predictions = probability_model.predict(np.array([[[overs,balls,scored,wicket,required]]]))
 
         if predictions[0][0]>predictions[0][1]:
             result = bowl

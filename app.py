@@ -26,18 +26,15 @@ def predict():
             return render_template('index.html',prediction_text='Batting and Bowling team can not be the same.')
 
             
-        overs = int(request.form['Overs'])
-        balls = int(request.form['Balls'])
-        scored = int(request.form['Runs Scored'])
-        wicket = int(request.form['Wicket left'])
-        required = int(request.form['Required Runs'])
-        
-        over = overs + 0.1*(balls)
-        crr = scored/over
+        overs = float(request.form['Overs'])
+        balls = float(request.form['Balls'])
+        scored = float(request.form['Runs Scored'])
+        wicket = float(request.form['Wicket left'])
+        required = float(request.form['Required Runs'])
          
        
         probability_model = tf.keras.Sequential([model, tf.keras.layers.Softmax()])
-        predictions = probability_model.predict([[[overs,balls,scored,wicket,required,crr]]])
+        predictions = probability_model.predict([[[overs,balls,scored,wicket,required]]])
 
         if predictions[0][0]>predictions[0][1]:
             result = bowl

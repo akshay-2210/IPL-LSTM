@@ -10,17 +10,16 @@
 
 <body>
 
-    <form action="{{ url_for('predict')}}" method="post">
-        <h1 style="text-align:center;">Live Win Prediction</h1>
-        
-        <div class='description'>
-            <p style="text-align: center">Start prediction with Second inning</p>
-            <p style="text-align: center">A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
-        </div>
-        
-        
-        <div class="left-text">
-            <h3 style="position: fixed; left:400px; top:180px">Batting Team</h3>
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1 style="text-align: center">Winning Team Prediction of IPL 2020</h1>
+            
+            <div class='description'>
+                <p style="text-align: center">Start prediction with Second inning</p>
+    			<p style="text-align: center">A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+            </div>
+            
+            <h3 style="position: absolute; left:400px; top:180px">Batting Team</h3>
             <select name="Batting team" id="bat" required="required">
                 <option value="none">Select a Batting team</option>
                 <option value = "Chennai Super Kings">Chennai Super Kings</option>
@@ -33,7 +32,34 @@
                 <option value = "Sunrisers Hyderabad">Sunrisers Hyderabad</option>
             </select>
 
-            <h3 style="position: fixed; left:400px; top:250px">Overs</h3>
+            <div class="parent">
+                <img class="image0" src="/static/IPL.jpg" alt="IPL LOGO" width=200 heigh=100> 
+                <img class="image1" src="/static/CSK.png" alt="Chennai Super Kings" width="100" height="80">
+                <img class="image2" src="/static/DC.jpg" alt="Delhi Capitals" width="100" height="80">
+                <img class="image3" src="/static/KXIP.png" alt="Kings XI Punjab" width="100" height="80">
+                <img class="image4" src="/static/KKR.png" alt="Kolkata Knight Riders" width="100" height="80">
+
+                <img class="image5" src="/static/MI.jpg" alt="Mumbai Indians" width="100" height="80">
+                <img class="image6" src="/static/RCB.png" alt="Royal Challengers Bangalore" width="100" height="80">
+                <img class="image7" src="/static/RR.png" alt="Rajasthan Royals" width="100" height="80">
+                <img class="image8" src="/static/SRH.jpg" alt="Sunrisers Hyderabad" width="100" height="80">
+            </div>
+           
+             
+            <h3 style="position: absolute; right:400px; top:180px">Bowling Team</h3>
+            <select name="Bowling team" id="bowl" required="required">
+                <option value="none">Select a Bowling team</option>
+                <option value = "Chennai Super Kings">Chennai Super Kings</option>
+                <option value = "Delhi Capitals">Delhi Capitals</option>
+                <option value = "Kings XI Punjab">Kings XI Punjab</option>
+                <option value = "Kolkata Knight Riders">Kolkata Knight Riders</option>
+                <option value = "Mumbai Indians">Mumbai Indians</option>
+                <option value = "Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+                <option value = "Rajasthan Royals">Rajasthan Royals</option>
+                <option value = "Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            </select>
+
+            <h3 style="position: absolute; left:400px; top:250px">Overs</h3>
             <select name="Overs" id="overs" required="required">
                 <option value = "none">Select Overs</option>
                 <option value = "1">1</option>
@@ -58,26 +84,7 @@
                 <option value = "20">20</option>
             </select>
 
-            <h3 style="position: fixed; left:400px; top:320px">Batting Team</h3>
-            <input name="Runs Scored" id="scored" type="number " placeholder="eg.50">
-            <h3 style="position: fixed; left:400px; top:340px">Score</h3>
-        </div>
-
-        <div class="right-text">
-            <h3 style="position: fixed; right:400px; top:180px">Bowling Team</h3>
-            <select name="Bowling team" id="bowl" required="required">
-                <option value="none">Select a Bowling team</option>
-                <option value = "Chennai Super Kings">Chennai Super Kings</option>
-                <option value = "Delhi Capitals">Delhi Capitals</option>
-                <option value = "Kings XI Punjab">Kings XI Punjab</option>
-                <option value = "Kolkata Knight Riders">Kolkata Knight Riders</option>
-                <option value = "Mumbai Indians">Mumbai Indians</option>
-                <option value = "Royal Challengers Bangalore">Royal Challengers Bangalore</option>
-                <option value = "Rajasthan Royals">Rajasthan Royals</option>
-                <option value = "Sunrisers Hyderabad">Sunrisers Hyderabad</option>
-            </select>
-
-            <h3 style="position: fixed; right:475px; top:250px">Balls</h3>
+            <h3 style="position: absolute; right:475px; top:250px">Balls</h3>
             <select name="Balls" id="balls" required="required">
                 <option value = "none">Select balls</option>
                 <option value = "0">0</option>
@@ -89,48 +96,30 @@
                 <option value = "6">6</option>
             </select>
 
-            <h3 style="position: fixed; right:395px; top:320px">Required Runs</h3>
-            <input name="Required Runs" id="required" required="required" placeholder="eg.147">
-        </div>
-
-
-        <div class="main-logo">
-            <img class="image0" src="/static/IPL.jpg" alt="IPL LOGO" width=150vw; height=100vh;> 
-        </div>
-
-        <div class="left-image">
-            <img class="image1" src="/static/CSK.png" alt="Chennai Super Kings" width="100" height="80">
-            <img class="image2" src="/static/DC.jpg" alt="Delhi Capitals" width="100" height="80">
-            <img class="image3" src="/static/KXIP.png" alt="Kings XI Punjab" width="100" height="80">
-            <img class="image4" src="/static/KKR.png" alt="Kolkata Knight Riders" width="100" height="80">
-        </div>
-
-        <div class="right-image">
-            <img class="image5" src="/static/MI.jpg" alt="Mumbai Indians" width="100" height="80">
-            <img class="image6" src="/static/RCB.png" alt="Royal Challengers Bangalore" width="100" height="80">
-            <img class="image7" src="/static/RR.png" alt="Rajasthan Royals" width="100" height="80">
-            <img class="image8" src="/static/SRH.jpg" alt="Sunrisers Hyderabad" width="100" height="80">
-        </div>
-        
-        <div class="centre text">
-            <h3 style="position: fixed; right:693px; top:390px">Wickets left</h3>
+            <h3 style="position: absolute; left:400px; top:320px">Batting Team</h3>
+            <input name="Runs Scored" id="scored" type="number " placeholder="eg.50">
+            <h3 style="position: absolute; left:400px; top:340px">Score</h3>
+            <h3 style="position: absolute; right:395px; top:320px">Required Runs</h3>
+            <input name="Required Runs" id="required" required="required" placeholder="eg.147">   
+            <h3 style="position: absolute; right:693px; top:390px">Wickets left</h3>
             <input name="Wicket left" id="wicket" required="required" placeholder="eg.5">   
-        </div>  
-        
-        <br><br><button id="predict" type="submit" style="position: fixed; right:700px; top:480px">Predict</button>
-    </form>
 
-    <br><br><h3 style="position: fixed; right:495px; top:560px">{{ prediction_text }}</h3>
+            <br><br><button id="predict" type="submit" style="position: absolute; right:700px; top:480px">Predict</button>
+        </form>
+
+        <br><br><h3 style="position: absolute; right:495px; top:560px">{{ prediction_text }}</h3>
+    </div>
 
     <style>
-        .left-text{
-            position: fixed;
+        #body{
+            margin: 0%;
+            padding: 0%;
+            width: 100%;
+            height: 100%;
         }
-        .right-text{
-            position: fixed;
-        }
+        
         #bat {
-            position: fixed;
+            position: absolute;
             top: 195px;
             left: 520px;
             width: 215px;
@@ -141,7 +130,7 @@
         }
 
         #bowl {
-            position: fixed;
+            position: absolute;
             top: 195px;
             right: 520px;
             width: 215px;
@@ -152,7 +141,7 @@
         }
 
         #overs {
-            position: fixed;
+            position: absolute;
             top: 265px;
             left: 520px;
             width: 105px;
@@ -163,7 +152,7 @@
         }
 
         #balls {
-            position: fixed;
+            position: absolute;
             top: 265px;
             right: 520px;
             width: 105px;
@@ -174,7 +163,7 @@
         }
 
         #scored {
-            position: fixed;
+            position: absolute;
             top: 335px;
             left: 520px;
             border-radius: 5px;
@@ -184,7 +173,7 @@
         }
 
         #required {
-            position: fixed;
+            position: absolute;
             top: 335px;
             right: 520px;
             border-radius: 5px;
@@ -193,7 +182,7 @@
             text-align: center;
         }
         #wicket{
-            position: fixed;
+            position: absolute;
             top: 435px;
             right: 660px;
             border-radius: 5px;
@@ -203,57 +192,55 @@
         }
 
         .parent{
-            position: fixed;
+            position: relative;
         }
 
-        
-    
         .image0{
-            position: fixed;
-            top: 15px;
-            left: 100px;
+            position: absolute;
+            top: -15px;
+            left: 250px;
         }
 
         .image1{
-            position: fixed;
+            position: absolute;
             top: 200px;
             right: 250px;
         }
         .image2{
-            position: fixed;
+            position: absolute;
             top: 300px;
             right: 250px;
         }
         .image3{
-            position: fixed;
+            position: absolute;
             top: 400px;
             right: 250px;
         }
 
         .image4{
-            position: fixed;
+            position: absolute;
             top: 500px;
             right: 250px;
         }
 
         .image5{
-            position: fixed;
+            position: absolute;
             top: 200px;
             left: 250px;
         }
         .image6{
-            position: fixed;
+            position: absolute;
             top: 300px;
             left: 250px;
         }
         .image7{
-            position: fixed;
+            position: absolute;
             top: 400px;
             left: 250px;
         }
 
         .image8{
-            position: fixed;
+            position: absolute;
             top: 500px;
             left: 250px;
         }
